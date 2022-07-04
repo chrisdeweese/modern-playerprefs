@@ -1,2 +1,31 @@
 # modern-playerprefs
-An API to save more data type than the standard Unity PlayerPrefs.
+An API that extends Unity's PlayerPrefs to save and load additional data types.
+
+------
+
+### TO-DO
+
+- Save/load float
+- Save/load double
+- Save/load string
+- Save/load bool
+- Save/load char
+- Save/load Transform
+- Save/load List
+- Save/load Dictionary
+- Save/load Object
+- Save/load JSON
+- Save/load DateTime
+- Save/load Color
+- Save/load Quaternion
+- Save/load Mesh
+- Save/load Box Collider 2D
+- Save/load Capsule Collider 2D
+- Save/load Circle Collider 2D
+- Save/load Polygon Collider 2D
+- Save/load Box Collider
+- Save/load Capsule Collider
+- Save/load Mesh Collider
+- Save/load Sphere Collider
+- Save/load Terrain Collider
+- Test backwards compatability
