@@ -17,6 +17,15 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 - Save/load JSON
 - Save/load DateTime
 - Save/load Color
+- Save/load Color32
+- Save/load Light
+- Save/load Ray
+- Save/load Ray2D
+- Save/load RaycastHit
+- Save/load RaycastHit2D
+- Save/load Touch
+- Save/load Vector2Int
+- Save/load Vector3Int
 - Save/load Quaternion
 - Save/load Mesh
 - Save/load Box Collider 2D
