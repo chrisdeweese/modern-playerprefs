@@ -12,6 +12,12 @@ public class PlayerPrefsExtended : MonoBehaviour
         string result = value.x + "," + value.y;
         PlayerPrefs.SetString(valueName, result);
     }
+
+    public void SetVector3(string valueName, Vector3 value)
+    {
+        string result = value.x + "," + value.y + "," + value.z;
+        PlayerPrefs.SetString(valueName, result);
+    }
     
     public int GetInt(string valueName, int defaultValue)
     {
@@ -26,5 +32,15 @@ public class PlayerPrefsExtended : MonoBehaviour
         string[] components = value.Split(',');
 
         return new Vector2(float.Parse(components[0]), float.Parse(components[1]));
+    }
+    
+    public Vector2 GetVector3(string valueName, Vector3 defaultValue)
+    {
+        string defaultString = defaultValue.x + "," + defaultValue.y + "," + defaultValue.z;
+        
+        string value = PlayerPrefs.GetString(valueName, defaultString);
+        string[] components = value.Split(',');
+
+        return new Vector3(float.Parse(components[0]), float.Parse(components[1]), float.Parse(components[2]));
     }
 }
