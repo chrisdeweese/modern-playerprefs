@@ -42,6 +42,12 @@ namespace ModernProgramming
             PlayerPrefs.SetString(valueName, result);
         }
 
+        public void SetColor(string valueName, Color color)
+        {
+            string result = color.r + "," + color.g + "," + color.b + "," + color.a;
+            PlayerPrefs.SetString(valueName, result);
+        }
+
         public bool GetBool(string valueName, bool defaultValue)
         {
             return PlayerPrefs.GetInt(valueName, defaultValue ? 1 : 0) > 0 ? true : false;
