@@ -97,5 +97,15 @@ namespace ModernProgramming
 
             return new Vector4(float.Parse(components[0]), float.Parse(components[1]), float.Parse(components[2]), float.Parse(components[3]));
         }
+
+        public Color GetColor(string valueName, Color defaultValue)
+        {
+            string defaultString = defaultValue.r + "," + defaultValue.g + "," + defaultValue.b + "," + defaultValue.a;
+
+            string value = PlayerPrefs.GetString(valueName, defaultString);
+            string[] components = value.Split(',');
+            
+            return new Color(float.Parse(components[0]), float.Parse(components[1]), float.Parse(components[2]), float.Parse(components[3]));
+        }
     }   
 }
