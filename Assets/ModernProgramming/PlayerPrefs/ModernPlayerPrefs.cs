@@ -14,6 +14,11 @@ namespace ModernProgramming
             PlayerPrefs.SetFloat(valueName, value);
         }
 
+        public void SetString(string valueName, string value)
+        {
+            PlayerPrefs.SetString(valueName, value);
+        }
+
         public void SetVector2(string valueName, Vector2 value)
         {
             string result = value.x + "," + value.y;
