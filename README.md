@@ -7,6 +7,7 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 
 - Int
 - Float
+- String
 - Vector2
 - Vector3
 - Vector4
@@ -16,7 +17,6 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 ### TO-DO
 
 - Save/load double
-- Save/load string
 - Save/load bool
 - Save/load char
 - Save/load Transform
