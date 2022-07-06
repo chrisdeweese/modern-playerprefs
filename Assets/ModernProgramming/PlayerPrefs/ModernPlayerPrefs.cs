@@ -37,6 +37,11 @@ namespace ModernProgramming
             return PlayerPrefs.GetInt(valueName, defaultValue);
         }
 
+        public float GetFloat(string valueName, float defaultValue)
+        {
+            return PlayerPrefs.GetFloat(valueName, defaultValue);
+        }
+
         public Vector2 GetVector2(string valueName, Vector2 defaultValue)
         {
             string defaultString = defaultValue.x + "," + defaultValue.y;
