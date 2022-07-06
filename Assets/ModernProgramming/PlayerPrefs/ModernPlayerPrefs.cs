@@ -41,6 +41,11 @@ namespace ModernProgramming
             string result = value.w + "," + value.x + "," + value.y + "," + value.z;
             PlayerPrefs.SetString(valueName, result);
         }
+
+        public bool GetBool(string valueName, bool defaultValue)
+        {
+            return PlayerPrefs.GetInt(valueName, defaultValue ? 1 : 0) > 0 ? true : false;
+        }
         
         public int GetInt(string valueName, int defaultValue)
         {
