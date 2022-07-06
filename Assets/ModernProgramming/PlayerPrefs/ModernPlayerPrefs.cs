@@ -4,6 +4,11 @@ namespace ModernProgramming
 {
     public class PlayerPrefsExtended : MonoBehaviour
     {
+        public void SetBool(string valueName, bool value)
+        {
+            PlayerPrefs.SetInt(valueName, value ? 1 : 0);
+        }
+        
         public void SetInt(string valueName, int value)
         {
             PlayerPrefs.SetInt(valueName, value);
