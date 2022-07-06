@@ -5,6 +5,7 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 
 ### Supported Data Types
 
+- Bool
 - Int
 - Float
 - String
@@ -18,7 +19,6 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 
 - Save/load double
 - Save/load decimal
-- Save/load bool
 - Save/load char
 - Save/load Transform
 - Save/load List
