@@ -12,6 +12,7 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 - Vector2
 - Vector3
 - Vector4
+- Color
 
 ------
 
@@ -26,7 +27,6 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 - Save/load Object
 - Save/load JSON
 - Save/load DateTime
-- Save/load Color
 - Save/load Color32
 - Save/load Light
 - Save/load Ray
