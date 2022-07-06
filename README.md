@@ -17,6 +17,7 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 ### TO-DO
 
 - Save/load double
+- Save/load decimal
 - Save/load bool
 - Save/load char
 - Save/load Transform
