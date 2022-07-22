@@ -13,12 +13,12 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 - Vector3
 - Vector4
 - Color
+- Double
 
 ------
 
 ### TO-DO
 
-- Save/load double
 - Save/load decimal
 - Save/load char
 - Save/load Transform
