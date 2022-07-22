@@ -52,6 +52,11 @@ namespace ModernProgramming
         {
             PlayerPrefs.SetString(valueName, value.ToString());
         }
+
+        public void SetDecimal(string valueName, decimal value)
+        {
+            PlayerPrefs.SetString(valueName, value.ToString());
+        }
         
         public bool GetBool(string valueName)
         {
@@ -122,6 +127,14 @@ namespace ModernProgramming
         {
             string value = PlayerPrefs.GetString(valueName, defaultValue.ToString());
             double result = System.Convert.ToDouble(value);
+
+            return result;
+        }
+
+        public decimal GetDecimal(string valueName, decimal defaultValue)
+        {
+            string value = PlayerPrefs.GetString(valueName, defaultValue.ToString());
+            decimal result = System.Convert.ToDecimal(value);
 
             return result;
         }
