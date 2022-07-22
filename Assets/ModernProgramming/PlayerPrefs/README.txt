@@ -13,3 +13,4 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 - Vector3
 - Vector4
 - Color
+- Double
