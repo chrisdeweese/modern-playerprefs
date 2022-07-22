@@ -52,6 +52,11 @@ namespace ModernProgramming
         {
             PlayerPrefs.SetString(valueName, value.ToString());
         }
+        
+        public bool GetBool(string valueName)
+        {
+            return PlayerPrefs.GetInt(valueName, 0) > 0 ? true : false;
+        }
 
         public bool GetBool(string valueName, bool defaultValue)
         {

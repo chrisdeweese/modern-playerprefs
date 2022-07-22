@@ -27,6 +27,7 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 - Save/load Object
 - Save/load JSON
 - Save/load DateTime
+- Save/load TimeSpan
 - Save/load Color32
 - Save/load Light
 - Save/load Ray
@@ -48,3 +49,12 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 - Save/load Sphere Collider
 - Save/load Terrain Collider
 - Test backwards compatability
+- List active PlayerPrefs in editor
+- Search for PlayerPrefs in editor window
+- Change PlayerPrefs values in editor at runtime
+- Encrypt/decrypt support
+- Setup wizard
+- Save method
+- HasKey method
+- DeleteAll method
+- DeleteKey method
