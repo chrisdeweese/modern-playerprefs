@@ -48,6 +48,11 @@ namespace ModernProgramming
             PlayerPrefs.SetString(valueName, result);
         }
 
+        public void SetDouble(string valueName, double value)
+        {
+            PlayerPrefs.SetString(valueName, value.ToString());
+        }
+
         public bool GetBool(string valueName, bool defaultValue)
         {
             return PlayerPrefs.GetInt(valueName, defaultValue ? 1 : 0) > 0 ? true : false;
@@ -106,6 +111,14 @@ namespace ModernProgramming
             string[] components = value.Split(',');
             
             return new Color(float.Parse(components[0]), float.Parse(components[1]), float.Parse(components[2]), float.Parse(components[3]));
+        }
+
+        public double GetDouble(string valueName, double defaultValue)
+        {
+            string value = PlayerPrefs.GetString(valueName, defaultValue.ToString());
+            double result = System.Convert.ToDouble(value);
+
+            return result;
         }
     }   
 }
