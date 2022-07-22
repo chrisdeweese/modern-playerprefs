@@ -58,3 +58,4 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 - HasKey method
 - DeleteAll method
 - DeleteKey method
+- Demo scenes
