@@ -57,6 +57,22 @@ namespace ModernProgramming
         {
             PlayerPrefs.SetString(valueName, value.ToString());
         }
+
+        public void SetChar(string valueName, char value)
+        {
+            PlayerPrefs.SetString(valueName, value.ToString());
+        }
+
+        public void SetCharArray(string valueName, char[] values)
+        {
+            string result = "";
+            for (int i = 0; i < values.Length; i++)
+            {
+                result += values[i];
+            }
+            
+            PlayerPrefs.SetString(valueName, result);
+        }
         
         public bool GetBool(string valueName)
         {
@@ -136,6 +152,20 @@ namespace ModernProgramming
             string value = PlayerPrefs.GetString(valueName, defaultValue.ToString());
             decimal result = System.Convert.ToDecimal(value);
 
+            return result;
+        }
+
+        public char GetChar(string valueName, char defaultValue)
+        {
+            string value = PlayerPrefs.GetString(valueName, defaultValue.ToString());
+            char[] result = value.ToCharArray();
+            return result[0];
+        }
+
+        public char[] GetCharArray(string valueName, char[] defaultValue)
+        {
+            string value = PlayerPrefs.GetString(valueName, defaultValue.ToString());
+            char[] result = value.ToCharArray();
             return result;
         }
     }   

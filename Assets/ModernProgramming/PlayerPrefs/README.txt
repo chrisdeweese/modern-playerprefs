@@ -15,3 +15,5 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 - Color
 - Double
 - Decimal
+- Char
+- Char[]
