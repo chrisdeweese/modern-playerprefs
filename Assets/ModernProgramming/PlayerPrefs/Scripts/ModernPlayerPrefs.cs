@@ -1,9 +1,30 @@
+using System;
 using UnityEngine;
 
 namespace ModernProgramming
 {
     public class PlayerPrefsExtended : MonoBehaviour
     {
+        public void Save()
+        {
+            PlayerPrefs.Save();
+        }
+
+        public void DeleteAll()
+        {
+            PlayerPrefs.DeleteAll();
+        }
+
+        public void DeleteKey(string key)
+        {
+            PlayerPrefs.DeleteKey(key);
+        }
+        
+        public bool HasKey(string key)
+        {
+            return PlayerPrefs.HasKey(key);
+        }
+
         public void SetBool(string valueName, bool value)
         {
             PlayerPrefs.SetInt(valueName, value ? 1 : 0);
