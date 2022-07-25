@@ -73,6 +73,21 @@ namespace ModernProgramming
             
             PlayerPrefs.SetString(valueName, result);
         }
+
+        public void SetTransform(string valueName, Transform t)
+        {
+            string result = t.localPosition.x + "," + 
+                            t.localPosition.y + "," + 
+                            t.localPosition.z + "," + 
+                            t.localRotation.x + "," +
+                            t.localRotation.y + "," + 
+                            t.localRotation.z + "," + 
+                            t.localScale.x + "," + 
+                            t.localScale.y + "," + 
+                            t.localScale.z;
+            
+            PlayerPrefs.SetString(valueName, result);
+        }
         
         public bool GetBool(string valueName)
         {
@@ -166,6 +181,28 @@ namespace ModernProgramming
         {
             string value = PlayerPrefs.GetString(valueName, defaultValue.ToString());
             char[] result = value.ToCharArray();
+            return result;
+        }
+
+        public Transform GetTransform(string valueName, Transform defaultValue)
+        {
+            string defaultString = defaultValue.localPosition.x + "," + 
+                                   defaultValue.localPosition.y + "," + 
+                                   defaultValue.localPosition.z + "," + 
+                                   defaultValue.localRotation.x + "," +
+                                   defaultValue.localRotation.y + "," + 
+                                   defaultValue.localRotation.z + "," + 
+                                   defaultValue.localScale.x + "," + 
+                                   defaultValue.localScale.y + "," + 
+                                   defaultValue.localScale.z;
+            string value = PlayerPrefs.GetString(valueName, defaultString);
+            string[] components = value.Split(',');
+
+            Transform result = new GameObject().transform;
+            result.localPosition = new Vector3(float.Parse(components[0]), float.Parse(components[1]), float.Parse(components[2]));
+            result.eulerAngles = new Vector3(float.Parse(components[3]), float.Parse(components[4]), float.Parse(components[5]));
+            result.localScale = new Vector3(float.Parse(components[6]), float.Parse(components[7]), float.Parse(components[8]));
+
             return result;
         }
     }   

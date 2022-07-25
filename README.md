@@ -17,12 +17,12 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 - Decimal
 - Char
 - Char[]
+- Transform
 
 ------
 
 ### TO-DO
 
-- Save/load Transform
 - Save/load List
 - Save/load Dictionary
 - Save/load Object
