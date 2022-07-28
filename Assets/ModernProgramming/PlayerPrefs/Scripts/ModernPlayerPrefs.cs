@@ -5,86 +5,86 @@ namespace ModernProgramming
 {
     public class PlayerPrefsExtended : MonoBehaviour
     {
-        public void Save()
+        public static void Save()
         {
             PlayerPrefs.Save();
         }
 
-        public void DeleteAll()
+        public static void DeleteAll()
         {
             PlayerPrefs.DeleteAll();
         }
 
-        public void DeleteKey(string key)
+        public static void DeleteKey(string key)
         {
             PlayerPrefs.DeleteKey(key);
         }
         
-        public bool HasKey(string key)
+        public static bool HasKey(string key)
         {
             return PlayerPrefs.HasKey(key);
         }
 
-        public void SetBool(string valueName, bool value)
+        public static void SetBool(string valueName, bool value)
         {
             PlayerPrefs.SetInt(valueName, value ? 1 : 0);
         }
         
-        public void SetInt(string valueName, int value)
+        public static void SetInt(string valueName, int value)
         {
             PlayerPrefs.SetInt(valueName, value);
         }
 
-        public void SetFloat(string valueName, float value)
+        public static void SetFloat(string valueName, float value)
         {
             PlayerPrefs.SetFloat(valueName, value);
         }
 
-        public void SetString(string valueName, string value)
+        public static void SetString(string valueName, string value)
         {
             PlayerPrefs.SetString(valueName, value);
         }
 
-        public void SetVector2(string valueName, Vector2 value)
+        public static void SetVector2(string valueName, Vector2 value)
         {
             string result = value.x + "," + value.y;
             PlayerPrefs.SetString(valueName, result);
         }
 
-        public void SetVector3(string valueName, Vector3 value)
+        public static void SetVector3(string valueName, Vector3 value)
         {
             string result = value.x + "," + value.y + "," + value.z;
             PlayerPrefs.SetString(valueName, result);
         }
 
-        public void SetVector4(string valueName, Vector4 value)
+        public static void SetVector4(string valueName, Vector4 value)
         {
             string result = value.w + "," + value.x + "," + value.y + "," + value.z;
             PlayerPrefs.SetString(valueName, result);
         }
 
-        public void SetColor(string valueName, Color color)
+        public static void SetColor(string valueName, Color color)
         {
             string result = color.r + "," + color.g + "," + color.b + "," + color.a;
             PlayerPrefs.SetString(valueName, result);
         }
 
-        public void SetDouble(string valueName, double value)
+        public static void SetDouble(string valueName, double value)
         {
             PlayerPrefs.SetString(valueName, value.ToString());
         }
 
-        public void SetDecimal(string valueName, decimal value)
+        public static void SetDecimal(string valueName, decimal value)
         {
             PlayerPrefs.SetString(valueName, value.ToString());
         }
 
-        public void SetChar(string valueName, char value)
+        public static void SetChar(string valueName, char value)
         {
             PlayerPrefs.SetString(valueName, value.ToString());
         }
 
-        public void SetCharArray(string valueName, char[] values)
+        public static void SetCharArray(string valueName, char[] values)
         {
             string result = "";
             for (int i = 0; i < values.Length; i++)
@@ -95,7 +95,7 @@ namespace ModernProgramming
             PlayerPrefs.SetString(valueName, result);
         }
 
-        public void SetTransform(string valueName, Transform t)
+        public static void SetTransform(string valueName, Transform t)
         {
             string result = t.localPosition.x + "," + 
                             t.localPosition.y + "," + 
@@ -110,32 +110,32 @@ namespace ModernProgramming
             PlayerPrefs.SetString(valueName, result);
         }
         
-        public bool GetBool(string valueName)
+        public static bool GetBool(string valueName)
         {
             return PlayerPrefs.GetInt(valueName, 0) > 0 ? true : false;
         }
 
-        public bool GetBool(string valueName, bool defaultValue)
+        public static bool GetBool(string valueName, bool defaultValue)
         {
             return PlayerPrefs.GetInt(valueName, defaultValue ? 1 : 0) > 0 ? true : false;
         }
         
-        public int GetInt(string valueName, int defaultValue)
+        public static int GetInt(string valueName, int defaultValue)
         {
             return PlayerPrefs.GetInt(valueName, defaultValue);
         }
 
-        public float GetFloat(string valueName, float defaultValue)
+        public static float GetFloat(string valueName, float defaultValue)
         {
             return PlayerPrefs.GetFloat(valueName, defaultValue);
         }
 
-        public string GetString(string valueName, string defaultValue)
+        public static string GetString(string valueName, string defaultValue)
         {
             return PlayerPrefs.GetString(valueName, defaultValue);
         }
 
-        public Vector2 GetVector2(string valueName, Vector2 defaultValue)
+        public static Vector2 GetVector2(string valueName, Vector2 defaultValue)
         {
             string defaultString = defaultValue.x + "," + defaultValue.y;
             
@@ -145,7 +145,7 @@ namespace ModernProgramming
             return new Vector2(float.Parse(components[0]), float.Parse(components[1]));
         }
         
-        public Vector2 GetVector3(string valueName, Vector3 defaultValue)
+        public static Vector2 GetVector3(string valueName, Vector3 defaultValue)
         {
             string defaultString = defaultValue.x + "," + defaultValue.y + "," + defaultValue.z;
             
@@ -155,7 +155,7 @@ namespace ModernProgramming
             return new Vector3(float.Parse(components[0]), float.Parse(components[1]), float.Parse(components[2]));
         }
         
-        public Vector2 GetVector4(string valueName, Vector4 defaultValue)
+        public static Vector2 GetVector4(string valueName, Vector4 defaultValue)
         {
             string defaultString = defaultValue.x + "," + defaultValue.y + "," + defaultValue.z + "," + defaultValue.w;
             
@@ -165,7 +165,7 @@ namespace ModernProgramming
             return new Vector4(float.Parse(components[0]), float.Parse(components[1]), float.Parse(components[2]), float.Parse(components[3]));
         }
 
-        public Color GetColor(string valueName, Color defaultValue)
+        public static Color GetColor(string valueName, Color defaultValue)
         {
             string defaultString = defaultValue.r + "," + defaultValue.g + "," + defaultValue.b + "," + defaultValue.a;
 
@@ -175,7 +175,7 @@ namespace ModernProgramming
             return new Color(float.Parse(components[0]), float.Parse(components[1]), float.Parse(components[2]), float.Parse(components[3]));
         }
 
-        public double GetDouble(string valueName, double defaultValue)
+        public static double GetDouble(string valueName, double defaultValue)
         {
             string value = PlayerPrefs.GetString(valueName, defaultValue.ToString());
             double result = System.Convert.ToDouble(value);
@@ -183,7 +183,7 @@ namespace ModernProgramming
             return result;
         }
 
-        public decimal GetDecimal(string valueName, decimal defaultValue)
+        public static decimal GetDecimal(string valueName, decimal defaultValue)
         {
             string value = PlayerPrefs.GetString(valueName, defaultValue.ToString());
             decimal result = System.Convert.ToDecimal(value);
@@ -191,21 +191,21 @@ namespace ModernProgramming
             return result;
         }
 
-        public char GetChar(string valueName, char defaultValue)
+        public static char GetChar(string valueName, char defaultValue)
         {
             string value = PlayerPrefs.GetString(valueName, defaultValue.ToString());
             char[] result = value.ToCharArray();
             return result[0];
         }
 
-        public char[] GetCharArray(string valueName, char[] defaultValue)
+        public static char[] GetCharArray(string valueName, char[] defaultValue)
         {
             string value = PlayerPrefs.GetString(valueName, defaultValue.ToString());
             char[] result = value.ToCharArray();
             return result;
         }
 
-        public Transform GetTransform(string valueName, Transform defaultValue)
+        public static Transform GetTransform(string valueName, Transform defaultValue)
         {
             string defaultString = defaultValue.localPosition.x + "," + 
                                    defaultValue.localPosition.y + "," + 
