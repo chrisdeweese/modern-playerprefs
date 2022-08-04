@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 namespace ModernProgramming
 {
     public class DemoController : MonoBehaviour
