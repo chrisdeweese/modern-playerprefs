@@ -10,7 +10,7 @@ namespace ModernProgramming
     {
         [SerializeField] private Dropdown typeDropdown;
         [SerializeField] private Text valueLabel;
-        [SerializeField] private InputField inputFieldName;
+        [SerializeField] private InputField keyNameInput;
         [SerializeField] private GameObject stringInputRow;
         [SerializeField] private GameObject intInputRow;
         [SerializeField] private GameObject floatInputRow;
@@ -18,6 +18,9 @@ namespace ModernProgramming
 
         private void Start()
         {
+            ResetInputRows();
+            stringInputRow.SetActive(true);
+            
             typeDropdown.onValueChanged.AddListener(delegate
             {
                 TypeDropdownChanged(typeDropdown);
@@ -26,55 +29,72 @@ namespace ModernProgramming
 
         private void TypeDropdownChanged(Dropdown change)
         {
-            if (change.value == 0) //string
-            {
-                //stringInputRow
-            }
+            ResetInputRows();
+            
+            stringInputRow.SetActive(change.value == 0);
+            intInputRow.SetActive(change.value == 1);
+            floatInputRow.SetActive(change.value == 2);
+            boolInputRow.SetActive(change.value == 3);
         }
 
         private void ResetInputRows()
         {
-            
+            stringInputRow.SetActive(false);
+            intInputRow.SetActive(false);
+            floatInputRow.SetActive(false);
+            boolInputRow.SetActive(false);
         }
 
         //TODO: Auto-save
         public void onClick_Set()
         {
-            if (typeDropdown.options[typeDropdown.value].text.ToLower() == "string")
+            if (typeDropdown.value == 0)
             {
-                //PlayerPrefs.SetString(inputFieldName.text, inputFieldSet.text.ToString());
+                string value = stringInputRow.GetComponentInChildren<InputField>().text;
+                PlayerPrefsExtended.SetString(keyNameInput.text, value);
             }
-            else if (typeDropdown.options[typeDropdown.value].text.ToLower() == "int")
+            else if (typeDropdown.value == 1)
             {
-                //PlayerPrefs.SetInt(inputFieldName.text, int.Parse(inputFieldSet.text));
+                int value = int.Parse(intInputRow.GetComponentInChildren<InputField>().text);
+                PlayerPrefsExtended.SetInt(keyNameInput.text, value);
             }
-            else if (typeDropdown.options[typeDropdown.value].text.ToLower() == "float")
+            else if (typeDropdown.value == 2)
             {
-                //PlayerPrefs.SetFloat(inputFieldName.text, float.Parse(inputFieldSet.text));
+                float value = float.Parse(intInputRow.GetComponentInChildren<InputField>().text);
+                PlayerPrefsExtended.SetFloat(keyNameInput.text, value);
+            }
+            else if (typeDropdown.value == 3)
+            {
+                bool value = boolInputRow.GetComponentInChildren<Toggle>().isOn;
+                PlayerPrefsExtended.SetBool(keyNameInput.text, value);
             }
             
-            Debug.Log("Modern PlayerPrefs Extended - Saved " + inputFieldName.text + " as " + typeDropdown.options[typeDropdown.value].text.ToLower());
+            Debug.Log("Modern PlayerPrefs Extended - Saved " + keyNameInput.text + " as " + typeDropdown.options[typeDropdown.value].text.ToLower());
         }
 
         public void onClick_Get()
         {
-            if (typeDropdown.options[typeDropdown.value].text.ToLower() == "string")
+            if (typeDropdown.value == 0)
             {
-                valueLabel.text = PlayerPrefs.GetString(inputFieldName.text, "");
+                valueLabel.text = PlayerPrefsExtended.GetString(keyNameInput.text, "");
             }
-            else if (typeDropdown.options[typeDropdown.value].text.ToLower() == "int")
+            else if (typeDropdown.value == 1)
             {
-                valueLabel.text = PlayerPrefs.GetInt(inputFieldName.text, 0).ToString();
+                valueLabel.text = PlayerPrefsExtended.GetInt(keyNameInput.text, 0).ToString();
             }
-            else if (typeDropdown.options[typeDropdown.value].text.ToLower() == "float")
+            if (typeDropdown.value == 2)
             {
-                valueLabel.text = PlayerPrefs.GetFloat(inputFieldName.text, 0.0f).ToString();
+                valueLabel.text = PlayerPrefsExtended.GetFloat(keyNameInput.text, 0.0f).ToString();
+            }
+            if (typeDropdown.value == 3)
+            {
+                valueLabel.text = PlayerPrefsExtended.GetBool(keyNameInput.text, false).ToString();
             }
         }
 
         public void onClick_Delete()
         {
-            PlayerPrefs.DeleteKey(inputFieldName.text);
+            PlayerPrefs.DeleteKey(keyNameInput.text);
             PlayerPrefs.Save();
         }
 
