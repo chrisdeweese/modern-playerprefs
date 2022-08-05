@@ -145,7 +145,7 @@ namespace ModernProgramming
             return new Vector2(float.Parse(components[0]), float.Parse(components[1]));
         }
         
-        public static Vector2 GetVector3(string valueName, Vector3 defaultValue)
+        public static Vector3 GetVector3(string valueName, Vector3 defaultValue)
         {
             string defaultString = defaultValue.x + "," + defaultValue.y + "," + defaultValue.z;
             
