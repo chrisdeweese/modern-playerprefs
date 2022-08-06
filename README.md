@@ -61,6 +61,7 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 - Save/load Mesh Collider
 - Save/load Sphere Collider
 - Save/load Terrain Collider
+- Don't allow set/get if key name is empty
 - Write script documentation
 - Test backwards compatability
 - List active PlayerPrefs in editor
@@ -69,5 +70,4 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 - Encrypt/decrypt support
 - Setup wizard
 - Save method
-- HasKey method
 - Demo scenes
