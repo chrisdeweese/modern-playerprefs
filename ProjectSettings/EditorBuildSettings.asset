@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ModernProgramming/PlayerPrefs/Demo/Demo.unity
+    path: Assets/ModernProgramming/PlayerPrefsExtended/Demo/Demo.unity
     guid: eb50f878a87937446a1d8770a4163c43
   m_configObjects: {}
