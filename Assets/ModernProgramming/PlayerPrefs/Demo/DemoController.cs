@@ -17,6 +17,7 @@ namespace ModernProgramming
         [SerializeField] private GameObject boolInputRow;
         [SerializeField] private GameObject vector2InputRow;
         [SerializeField] private GameObject vector3InputRow;
+        [SerializeField] private GameObject vector4InputRow;
 
         private void Start()
         {
@@ -39,6 +40,7 @@ namespace ModernProgramming
             boolInputRow.SetActive(change.value == 3);
             vector2InputRow.SetActive(change.value == 4);
             vector3InputRow.SetActive(change.value == 5);
+            vector4InputRow.SetActive(change.value == 6);
         }
 
         private void ResetInputRows()
@@ -49,6 +51,29 @@ namespace ModernProgramming
             boolInputRow.SetActive(false);
             vector2InputRow.SetActive(false);
             vector3InputRow.SetActive(false);
+            vector4InputRow.SetActive(false);
+
+            stringInputRow.GetComponentInChildren<InputField>().text = "";
+            intInputRow.GetComponentInChildren<InputField>().text = "";
+            floatInputRow.GetComponentInChildren<InputField>().text = "";
+
+            InputField[] vector2Inputs = vector2InputRow.GetComponentsInChildren<InputField>();
+            for (int i = 0; i < vector2Inputs.Length; i++)
+            {
+                vector2Inputs[i].text = "";
+            }
+            
+            InputField[] vector3Inputs = vector3InputRow.GetComponentsInChildren<InputField>();
+            for (int i = 0; i < vector3Inputs.Length; i++)
+            {
+                vector3Inputs[i].text = "";
+            }
+            
+            InputField[] vector4Inputs = vector4InputRow.GetComponentsInChildren<InputField>();
+            for (int i = 0; i < vector3Inputs.Length; i++)
+            {
+                vector4Inputs[i].text = "";
+            }
         }
 
         //TODO: Auto-save
@@ -66,7 +91,7 @@ namespace ModernProgramming
             }
             else if (typeDropdown.value == 2)
             {
-                float value = float.Parse(intInputRow.GetComponentInChildren<InputField>().text);
+                float value = float.Parse(floatInputRow.GetComponentInChildren<InputField>().text);
                 PlayerPrefsExtended.SetFloat(keyNameInput.text, value);
             }
             else if (typeDropdown.value == 3)
@@ -86,6 +111,14 @@ namespace ModernProgramming
                 Vector3 value = new Vector3(float.Parse(inputs[0].text), float.Parse(inputs[1].text), float.Parse(inputs[2].text));
                 PlayerPrefsExtended.SetVector3(keyNameInput.text, value);
             }
+            else if (typeDropdown.value == 6)
+            {
+                InputField[] inputs = vector4InputRow.GetComponentsInChildren<InputField>();
+                Vector4 value = new Vector4(float.Parse(inputs[0].text), float.Parse(inputs[1].text), float.Parse(inputs[2].text), float.Parse(inputs[3].text));
+                PlayerPrefsExtended.SetVector4(keyNameInput.text, value);
+            }
+            
+            onClick_Get();
             
             Debug.Log("PlayerPrefs Extended - Saved " + keyNameInput.text + " as " + typeDropdown.options[typeDropdown.value].text.ToLower());
         }
@@ -121,6 +154,11 @@ namespace ModernProgramming
             else if (typeDropdown.value == 5)
             {
                 result = PlayerPrefsExtended.GetVector3(keyNameInput.text, Vector3.zero).ToString();
+                valueLabel.text = result;
+            }
+            else if (typeDropdown.value == 6)
+            {
+                result = PlayerPrefsExtended.GetVector4(keyNameInput.text, Vector4.zero).ToString();
                 valueLabel.text = result;
             }
             
