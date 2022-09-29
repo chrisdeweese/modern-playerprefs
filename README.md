@@ -82,5 +82,21 @@ An API that extends Unity's PlayerPrefs to save and load additional data types.
 - List active PlayerPrefs in editor
 - Search for PlayerPrefs in editor window
 - Change PlayerPrefs values in editor at runtime
-- Encrypt/decrypt support
+- Encrypt/decrypt support with AES
+- Save arrays of data types
+- Put items into groups
+- Filter editor list of data types
+- Search for items by key names in editor
+- Save and load custom data types with System.Serializable
+- Save List, Array, Dictionary, Hashset
+- Prevent deletion of keys on iOS update
+- Force refresh editor window
+- Cheat detection (variable changed on the fly)
+- Cheat events
+- Save entire Unity components and prefabs
+- Export/import key files
+- JSON support
+- Playmaker support
+- Bolt support
+- Playfab support
 - Setup wizard
